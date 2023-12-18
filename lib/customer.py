@@ -1,4 +1,5 @@
 from review import Review
+
 class Customer:
     all_customers = []
 
@@ -40,3 +41,11 @@ class Customer:
     @classmethod
     def find_all_by_given_name(cls, name):
         return [customer for customer in cls.all_customers if customer.given_name == name]
+    
+       # Creating customer instances
+customer1 = Customer("John", "Doe")
+customer2 = Customer("Jane", "Smith")
+
+# Accessing review information
+review1 = Review(customer1, "Restaurant A", 4)
+print(f"{review1.get_review_customer().full_name()} reviewed {review1.get_review_restaurant()} with a rating of {review1.get_rating()}")
